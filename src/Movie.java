@@ -6,8 +6,7 @@ public class Movie {
     private int lengthInMinutes;
     private String genre;
 
-    public Movie(
-            String title, String director, int yearCreated, boolean isInColor, int lenghtInMinutes, String genre) {
+    public Movie(String title, String director, int yearCreated, boolean isInColor, int lenghtInMinutes, String genre) {
         this.title = title;
         this.director = director;
         this.yearCreated = yearCreated;
@@ -15,22 +14,18 @@ public class Movie {
         this.lengthInMinutes = lenghtInMinutes;
         this.genre = genre;
     }
-
-
     public String getTitle() {
         return title;
     }
     public String getDirector(){
         return director;
     }
-
     public int getYearCreated(){
         return yearCreated;
     }
     public boolean getisInColor(){
         return isInColor;
     }
-
     public int getLengthInMinutes() {
         return lengthInMinutes;
     }

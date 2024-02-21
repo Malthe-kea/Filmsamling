@@ -1,13 +1,14 @@
+import java.util.ArrayList;
+
 public class MovieCollection {
-
-    private Movie[] filmListe;
-    int count = 0;
-
+        ArrayList<Movie> filmListe;
+    //int count = 0;
     public MovieCollection(){
-        this.filmListe = new Movie[5];
+        this.filmListe = new ArrayList<Movie>();
     }
-    public void tilføjFilm(String title, String director, int yearCreated, boolean isInColor, int lenghtInMinutes, String genre) {
-        filmListe[count++] = new Movie(title, director, yearCreated, isInColor, lenghtInMinutes, genre);
+    public void tilføjFilm(Movie movie) {
+        filmListe.add(movie);
     }
-
 }
+
+//Brug sentinal loop!
