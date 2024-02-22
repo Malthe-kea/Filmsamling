@@ -10,10 +10,21 @@ public class MovieCollection {
     public ArrayList<Movie> getFilmListe() {
         return filmListe;
     }
-
-    public void tilføjFilm(Movie movie) {
+    public void addMovie(Movie movie) {
         filmListe.add(movie);
     }
+    public void searchMovie(){
+    }
+
+    /*@Override
+    public String toString(){
+        String result = "";
+        result += title + " " + genre;
+        if (isInColor){
+            result += "er i farve";
+        }
+        return result;
+    }*/
 }
 
 //Brug sentinal loop!

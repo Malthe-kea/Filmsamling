@@ -14,6 +14,18 @@ public class Movie {
         this.lengthInMinutes = lenghtInMinutes;
         this.genre = genre;
     }
+@Override
+    public String toString(){
+        String result = "";
+        result += title + " " + director + " " + yearCreated + " " + " " + lengthInMinutes + " " + genre + " ";
+        if (isInColor){
+            result += "er i farve";
+        }
+        else {
+            result+= "er i sort/hvid";
+        }
+        return result;
+    }
     public String getTitle() {
         return title;
     }
