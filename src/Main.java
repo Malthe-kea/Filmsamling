@@ -12,7 +12,8 @@ public class Main {
 
             System.out.println("Velkommen til min filmsamling!");
             System.out.println("1. Opret en film");
-            System.out.println("2. Afslut");
+            System.out.println("2. Liste af oprettede film");
+            System.out.println("3. Afslut");
             choice = input.nextInt();
 
             if (choice == 1) {
@@ -39,10 +40,16 @@ public class Main {
                 Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
                 Movie.tilføjFilm(movie);
-            } else {
-
             }
-
+            else if (choice == 2) {
+                for ( int i = 0; i < 3; i++){
+                    System.out.println(Movie.getFilmListe());
+                }
+            } else {
+                System.out.println("Du har indtastet et ugyldigt tal");
+                System.out.println("Forsøg venligst igen.");
+                System.out.println();
+            }
         }
         System.out.println("Farvel!");
     }

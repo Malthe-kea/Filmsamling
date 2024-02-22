@@ -6,6 +6,11 @@ public class MovieCollection {
     public MovieCollection(){
         this.filmListe = new ArrayList<Movie>();
     }
+
+    public ArrayList<Movie> getFilmListe() {
+        return filmListe;
+    }
+
     public void tilføjFilm(Movie movie) {
         filmListe.add(movie);
     }
