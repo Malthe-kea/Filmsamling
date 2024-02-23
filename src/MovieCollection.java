@@ -16,15 +16,13 @@ public class MovieCollection {
     public void searchMovie(){
     }
 
-    /*@Override
     public String toString(){
-        String result = "";
-        result += title + " " + genre;
-        if (isInColor){
-            result += "er i farve";
+        String allFilms = "";
+        for (Movie m : filmListe){
+            allFilms += m.toString() + "\n";
         }
-        return result;
-    }*/
+        return allFilms;
+    }
 }
 
 //Brug sentinal loop!

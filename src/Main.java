@@ -18,23 +18,23 @@ public class Main {
             choice = input.nextInt();
             if (choice == 1) {
                 input.nextLine();
-                System.out.println("Titel :");
+                System.out.println("Angiv titel :");
                 String title = input.nextLine();
 
-                System.out.println("Director :");
+                System.out.println("Angivt instruktør :");
                 String director = input.nextLine();
 
-                System.out.println("Year Created :");
+                System.out.println("Angiv årstal :");
                 int yearCreated = input.nextInt();
 
-                System.out.println("Is in color? (Write 'True' for yes, 'False' for no) :");
+                System.out.println("Er filmen i farve? (Skriv 'true' for ja og 'false' for nej) :");
                 boolean isInColor = input.nextBoolean();
 
-                System.out.println("Length in minutes :");
+                System.out.println("Angiv filmens længde i minutter :");
                 int lengthInMinutes = input.nextInt();
                 input.nextLine();
 
-                System.out.println("Genre :");
+                System.out.println("Angiv genre :");
                 String genre = input.nextLine();
 
                 Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre);

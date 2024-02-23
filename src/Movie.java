@@ -16,15 +16,16 @@ public class Movie {
     }
 @Override
     public String toString(){
-        String result = "";
-        result += title + " " + director + " " + yearCreated + " " + " " + lengthInMinutes + " " + genre + " ";
+        String film = "";
+        film += "Filmtitel: " + title + "\nFilminstruktør: " + director +"\nÅrstal: " + yearCreated+"\nLængde: " + lengthInMinutes+"\nGenre: " + genre + "\nFarvefilm: ";
+
         if (isInColor){
-            result += "er i farve";
+            film += "Ja";
         }
         else {
-            result+= "er i sort/hvid";
+            film += "Nej";
         }
-        return result;
+        return film + "\n";
     }
     public String getTitle() {
         return title;
