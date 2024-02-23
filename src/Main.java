@@ -55,6 +55,8 @@ public class Main {
                 input.nextLine();
                 String searchWord;
                 searchWord = input.nextLine();
+
+                //For each loop?
                 for (Movie i : movieCollection.getFilmListe()) {
 
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
