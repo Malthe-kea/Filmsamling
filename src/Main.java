@@ -58,10 +58,9 @@ public class Main {
                 System.out.println("Her er filmene indholdende " + searchWord);
                 //For each loop?
                 for (Movie i : movieCollection.getFilmListe()) {
-
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                         searchResults.add(i);
-                        System.out.println(i);
+                        System.out.println(i.toString());
                     }
                 }
             }

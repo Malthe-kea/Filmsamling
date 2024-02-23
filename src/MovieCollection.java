@@ -13,7 +13,10 @@ public class MovieCollection {
     public void addMovie(Movie movie) {
         filmListe.add(movie);
     }
-    public void searchMovie(){
+    public void searchMovie(String search){
+        for (Movie i : filmListe){
+            if (i.getTitle().toLowerCase().contains(search));
+        }
     }
 
     public String toString(){
