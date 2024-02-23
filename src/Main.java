@@ -52,30 +52,22 @@ public class Main {
             } else if (choice == 3) {
                 ArrayList<Movie> searchResults = new ArrayList<>();
                 System.out.println("Indtast et søgeord eller bogstav");
-                input.next();
+                input.nextLine();
                 String searchWord;
                 searchWord = input.nextLine();
-
                 for (Movie i : movieCollection.getFilmListe()) {
+
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                         searchResults.add(i);
                         System.out.println("Her er filmene indholdende " + searchWord);
                         System.out.println(i);
                     }
+                    else {
+                        System.out.println("FORKERT! Prøve igen");
+                    }
                 }
-                // System.out.println("Der er ikke nogen film");
-                /*else {
-                    System.out.println("Der er ikke nogen film på listen endnu!");
-                    System.out.println("Forsøg venligst igen.");
-                    System.out.println();*/
-                {
-                    System.out.println("Du har indtastet et ugyldigt emne");
-                    System.out.println("Forsøg venligst igen.");
-                    System.out.println();
-                }
-                System.out.println("Farvel!");
             }
-        }
+        }System.out.println("Farvel!");
     }
 }
 
@@ -84,3 +76,14 @@ public class Main {
 //Brug if-statemens til at lave menuen.
 //Brug sentinal loop til værdien 2.
 //spørg efter sentinal-opgaveløsning.
+
+//                // System.out.println("Der er ikke nogen film");
+//                /*else {
+//                    System.out.println("Der er ikke nogen film på listen endnu!");
+//                    System.out.println("Forsøg venligst igen.");
+//                    System.out.println();*/
+//                {
+//                    System.out.println("Du har indtastet et ugyldigt emne");
+//                    System.out.println("Forsøg venligst igen.");
+//                    System.out.println();
+//                }
