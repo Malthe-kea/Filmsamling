@@ -27,8 +27,12 @@ public class Main {
                 System.out.println("Angiv årstal :");
                 int yearCreated = input.nextInt();
 
-                System.out.println("Er filmen i farve? (Skriv 'true' for ja og 'false' for nej) :");
-                boolean isInColor = input.nextBoolean();
+                System.out.println("Er filmen i farve? (Skriv 'ja' eller 'nej') :");
+                boolean isInColor = false;
+                String colorOrNot = input.next().toLowerCase();
+                if (colorOrNot.equals("ja")) {
+                    isInColor = true;
+                }
 
                 System.out.println("Angiv filmens længde i minutter :");
                 int lengthInMinutes = input.nextInt();
@@ -40,42 +44,38 @@ public class Main {
                 Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
 
                 movieCollection.addMovie(movie);
-            }
-            else if (choice == 2) {
+            } else if (choice == 2) {
                 for (int i = 0; i < movieCollection.filmListe.size(); i++) {
-                    //movieCollection.filmListe.toString();
+                    movieCollection.filmListe.toString();
                     System.out.println(movieCollection.filmListe.toString());
                 }
-            }
-            else if(choice == 3) {
+            } else if (choice == 3) {
+                ArrayList<Movie> searchResults = new ArrayList<>();
                 System.out.println("Indtast et søgeord eller bogstav");
                 input.next();
-                String searchWord = input.nextLine();
-                ArrayList<Movie> searchResults = new ArrayList<>();
+                String searchWord;
+                searchWord = input.nextLine();
+
                 for (Movie i : movieCollection.getFilmListe()) {
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                         searchResults.add(i);
                         System.out.println("Her er filmene indholdende " + searchWord);
-                        System.out.println(searchResults);
+                        System.out.println(i);
                     }
                 }
-           {
-                    System.out.println("Der er ikke nogen film");
-                }
-
-                }
+                // System.out.println("Der er ikke nogen film");
                 /*else {
                     System.out.println("Der er ikke nogen film på listen endnu!");
                     System.out.println("Forsøg venligst igen.");
                     System.out.println();*/
-                }
-
                 {
-                System.out.println("Du har indtastet et ugyldigt tal");
-                System.out.println("Forsøg venligst igen.");
-                System.out.println();
+                    System.out.println("Du har indtastet et ugyldigt emne");
+                    System.out.println("Forsøg venligst igen.");
+                    System.out.println();
+                }
+                System.out.println("Farvel!");
             }
-        System.out.println("Farvel!");
+        }
     }
 }
 

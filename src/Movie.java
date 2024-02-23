@@ -17,7 +17,12 @@ public class Movie {
 @Override
     public String toString(){
         String film = "";
-        film += "Filmtitel: " + title + "\nFilminstruktør: " + director +"\nÅrstal: " + yearCreated+"\nLængde: " + lengthInMinutes+"\nGenre: " + genre + "\nFarvefilm: ";
+        film += "\nFilmtitel: " + title +
+                "\nFilminstruktør: " + director +
+                "\nÅrstal: " + yearCreated+
+                "\nLængde: " + lengthInMinutes+
+                "\nGenre: " + genre +
+                "\nFarvefilm: ";
 
         if (isInColor){
             film += "Ja";
