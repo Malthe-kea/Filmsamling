@@ -46,7 +46,7 @@ public class Main {
                 movieCollection.addMovie(movie);
             } else if (choice == 2) {
                 for (int i = 0; i < movieCollection.filmListe.size(); i++) {
-                    movieCollection.filmListe.toString();
+                    //movieCollection.filmListe.toString();
                     System.out.println(movieCollection.filmListe.toString());
                 }
             } else if (choice == 3) {
@@ -55,17 +55,13 @@ public class Main {
                 input.nextLine();
                 String searchWord;
                 searchWord = input.nextLine();
-
+                System.out.println("Her er filmene indholdende " + searchWord);
                 //For each loop?
                 for (Movie i : movieCollection.getFilmListe()) {
 
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                         searchResults.add(i);
-                        System.out.println("Her er filmene indholdende " + searchWord);
                         System.out.println(i);
-                    }
-                    else {
-                        System.out.println("FORKERT! Prøve igen");
                     }
                 }
             }
