@@ -13,12 +13,13 @@ public class MovieCollection {
     public void addMovie(Movie movie) {
         filmListe.add(movie);
     }
+    public void setMovie(Movie movie) {
+    }
     public void searchMovie(String search){
         for (Movie i : filmListe){
             if (i.getTitle().toLowerCase().contains(search));
         }
     }
-
     public String toString(){
         String allFilms = "";
         for (Movie m : filmListe){
@@ -27,5 +28,3 @@ public class MovieCollection {
         return allFilms;
     }
 }
-
-//Brug sentinal loop!
