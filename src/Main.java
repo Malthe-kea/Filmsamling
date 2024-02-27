@@ -67,6 +67,8 @@ public class Main {
                     if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                         searchResults.add(i);
                         System.out.println(i.toString());
+                    } else if (controller.movieCollection.filmListe.isEmpty()) {
+                        System.out.println("Der er ikke indtastet noget");
                     }
                 }
             } else if (choice == 4) {
