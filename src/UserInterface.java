@@ -111,10 +111,12 @@ public class UserInterface {
                         currentMovie.setGenre(genre);
 
                         System.out.println("Filmlisten er nu opdateret.");
+                    } else {
+                        System.out.println("Fejl, prøv igen");
                     }
                 }
             }
+            System.out.println("Farvel!");
         }
-        System.out.println("Farvel!");
     }
 }
