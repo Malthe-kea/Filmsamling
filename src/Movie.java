@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Movie {
     public String title;
     private String director;
@@ -16,21 +18,21 @@ public class Movie {
         this.genre = genre;
         this.ID = ID;
     }
-@Override
-    public String toString(){
-        String film = "";
-        film += "\nFilmtitel: " + title +
-                "\nFilminstruktør: " + director +
-                "\nÅrstal: " + yearCreated+
-                "\nLængde: " + lengthInMinutes+
-                "\nGenre: " + genre +
-                "\nfilmID: " + ID +
-                "\nFarvefilm: ";
 
-        if (isInColor){
+    @Override
+    public String toString() {
+        String film = String.join("\n", List.of(
+                "Filmtitel: " + title,
+                "Filminstruktør: " + director,
+                "Årstal: " + yearCreated,
+                "Længde: " + lengthInMinutes,
+                "Genre: " + genre,
+                "filmID: " + ID,
+                "Farvefilm: "));
+
+        if (isInColor) {
             film += "Ja";
-        }
-        else {
+        } else {
             film += "Nej";
         }
         return film + "\n";
