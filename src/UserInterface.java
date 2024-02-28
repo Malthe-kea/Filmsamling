@@ -59,11 +59,12 @@ public class UserInterface {
         Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre, ID);
 
         controller.movieCollection.addMovie(movie);
+        System.out.println("Din film er tilføjet");
     }
     public void getListOfMovies (){
-        for (int i = 0; i < controller.movieCollection.filmListe.size(); i++) {
+        for (int i = 0; i < controller.movieCollection.movieList.size(); i++) {
             //movieCollection.filmListe.toString();
-            System.out.println(controller.movieCollection.filmListe.toString());
+            System.out.println(controller.movieCollection.movieList.toString());
         }
     }
     public void searchMovieInList () {
@@ -73,11 +74,11 @@ public class UserInterface {
         searchWord = input.nextLine();
         System.out.println("Her er filmene indholdende " + searchWord);
         //For each loop?
-        for (Movie i : controller.movieCollection.getFilmListe()) {
+        for (Movie i : controller.movieCollection.getMovieCollectionList()) {
             if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                 searchResults.add(i);
                 System.out.println(i.toString());
-            } else if (controller.movieCollection.filmListe.isEmpty()) {
+            } else if (controller.movieCollection.movieList.isEmpty()) {
                 System.out.println("Der er ikke indtastet noget");
             }
         }
@@ -88,7 +89,7 @@ public class UserInterface {
 
         String searchWord;
         searchWord = input.nextLine();
-        for (Movie i : controller.movieCollection.getFilmListe()) {
+        for (Movie i : controller.movieCollection.getMovieCollectionList()) {
             if (i.getID().contains(searchWord)) {
                 System.out.println("Match! Indtast den nye film");
                 System.out.println("Angiv titel :");
