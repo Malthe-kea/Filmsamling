@@ -102,6 +102,17 @@ class MovieCollectionTest {
 
     @org.junit.jupiter.api.Test
     void searchMovie() {
+
+        //Arrange
+        Movie movie = new Movie("Flipper", "Arnold Schwarzenegger", 3,true, 209991, "comedy", "1");
+        MovieCollection movieCollection = new MovieCollection();
+        movieCollection.addMovie(movie);
+
+        //Act
+        String expextedResult = "Flipper";
+        String actualResult = movie.title;
+        //Assert
+        Assertions.assertEquals(expextedResult,actualResult);
     }
 }
 
