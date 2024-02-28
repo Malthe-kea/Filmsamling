@@ -32,6 +32,7 @@ public class UserInterface {
     }
     public void addMovie(){
         System.out.println("Angiv titel :");
+        input.nextLine();
         String title = input.nextLine();
 
         System.out.println("Angivt instruktør :");
@@ -53,7 +54,7 @@ public class UserInterface {
         System.out.println("Angiv genre :");
         String genre = input.nextLine();
 
-        System.out.println("Angive et unikt     film-ID som tal");
+        System.out.println("Angive et unikt film-ID som tal");
         String ID = input.nextLine();
 
         Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinutes, genre, ID);
@@ -63,11 +64,11 @@ public class UserInterface {
     }
     public void getListOfMovies (){
         for (int i = 0; i < controller.movieCollection.movieList.size(); i++) {
-            //movieCollection.filmListe.toString();
             System.out.println(controller.movieCollection.movieList.toString());
         }
     }
     public void searchMovieInList () {
+        input.nextLine();
         ArrayList<Movie> searchResults = new ArrayList<>();
         System.out.println("Indtast et titlen på den film du vil søge efter");
         String searchWord;
@@ -80,9 +81,15 @@ public class UserInterface {
             } else if (controller.movieCollection.movieList.isEmpty()) {
                 System.out.println("Der er ikke indtastet noget");
             }
+            else {
+                System.out.println("Der var ingen film, der mødte din søgning");
+                System.out.println();
+                System.out.println();
+            }
         }
     }
     public void editMovieFromList () {
+        input.nextLine();
         ArrayList<Movie> searchResults = new ArrayList<>();
         System.out.println("Indtast ID'et på den film, du vil redigere");
 
