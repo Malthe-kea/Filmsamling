@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MovieCollection {
         ArrayList<Movie> movieList;
@@ -15,11 +16,16 @@ public class MovieCollection {
     }
     public void setMovie(Movie movie) {
     }
-    public void searchMovie(String search){
-        for (Movie i : movieList){
-            if (i.getTitle().toLowerCase().contains(search));
+    public Movie searchMovie(String search) {
+        String lowerCaseSearch = search.toLowerCase();
+        for (Movie i : movieList) {
+            if (i.getTitle().toLowerCase().contains(lowerCaseSearch)) {
+                return i;
+            }
         }
+        return null;
     }
+
     public String toString(){
         String allFilms = "";
         for (Movie m : movieList){

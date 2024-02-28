@@ -109,10 +109,11 @@ class MovieCollectionTest {
         movieCollection.addMovie(movie);
 
         //Act
-        String expextedResult = "Flipper";
-        String actualResult = movie.title;
+        String expextedResult = movie.title;
+        Movie foundMovie = movieCollection.searchMovie(movie.getTitle());
         //Assert
-        Assertions.assertEquals(expextedResult,actualResult);
+        Assertions.assertNotNull(foundMovie);
+        Assertions.assertEquals(expextedResult,foundMovie.title);
     }
 }
 

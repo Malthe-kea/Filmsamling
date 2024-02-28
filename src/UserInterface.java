@@ -73,7 +73,6 @@ public class UserInterface {
         String searchWord;
         searchWord = input.nextLine();
         System.out.println("Her er filmene indholdende " + searchWord);
-        //For each loop?
         for (Movie i : controller.movieCollection.getMovieCollectionList()) {
             if (i.getTitle().toLowerCase().contains(searchWord.toLowerCase())) {
                 searchResults.add(i);
