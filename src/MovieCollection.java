@@ -25,7 +25,6 @@ public class MovieCollection {
         }
         return null;
     }
-
     public String toString(){
         String allFilms = "";
         for (Movie m : movieList){
