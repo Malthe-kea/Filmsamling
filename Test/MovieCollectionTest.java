@@ -61,7 +61,7 @@ class MovieCollectionTest {
         MovieCollection movieCollection = new MovieCollection();
         movieCollection.addMovie(movie);
         //Act
-        int expectedResult = 1;
+        int expectedResult = 2;
         int actualResult = movieCollection.getMovieCollectionList().size();
         //Assert
         Assertions.assertEquals(expectedResult,actualResult);

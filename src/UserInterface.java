@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -30,7 +31,7 @@ public class UserInterface {
             System.out.println("Farvel!");
         }
     }
-    public void addMovie(){
+    public void addMovie() {
         System.out.println("Angiv titel :");
         input.nextLine();
         String title = input.nextLine();
@@ -38,8 +39,21 @@ public class UserInterface {
         System.out.println("Angivt instruktør :");
         String director = input.nextLine();
 
-        System.out.println("Angiv årstal :");
-        int yearCreated = input.nextInt();
+        boolean done = false;
+        int yearCreated = 0;
+        while (!done) {
+        try {
+            System.out.println("Angiv årstal :");
+            input.next();
+            yearCreated = input.nextInt();
+            done = true;
+            System.out.println("Du har ikke indtastet et tal, prøv igen");
+        } catch (InputMismatchException ime) {
+            System.out.println("Du har ikke indtastet et tal, prøv igen");
+            input.nextLine();
+        }
+        }
+        input.next();
 
         System.out.println("Er filmen i farve? (Skriv 'ja' eller 'nej') :");
         boolean isInColor = false;
