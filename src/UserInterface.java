@@ -32,6 +32,10 @@ public class UserInterface {
         }
     }
     public void addMovie() {
+        boolean done = false;
+        int yearCreated = 0;
+        int lengthInMinutes = 0;
+
         System.out.println("Angiv titel :");
         input.nextLine();
         String title = input.nextLine();
@@ -39,30 +43,33 @@ public class UserInterface {
         System.out.println("Angivt instruktør :");
         String director = input.nextLine();
 
-        boolean done = false;
-        int yearCreated = 0;
         while (!done) {
         try {
             System.out.println("Angiv årstal :");
-            input.next();
             yearCreated = input.nextInt();
             done = true;
-            System.out.println("Du har ikke indtastet et tal, prøv igen");
         } catch (InputMismatchException ime) {
             System.out.println("Du har ikke indtastet et tal, prøv igen");
             input.nextLine();
         }
         }
-        input.next();
 
         System.out.println("Er filmen i farve? (Skriv 'ja' eller 'nej') :");
         boolean isInColor = false;
         String colorOrNot = input.next().toLowerCase();
         if (colorOrNot.equals("ja")) {
             isInColor = true;
+
         }
-        System.out.println("Angiv filmens længde i minutter :");
-        int lengthInMinutes = input.nextInt();
+        while (done)
+        try {
+            System.out.println("Angiv filmens længde i minutter :");
+            lengthInMinutes = input.nextInt();
+            done = false;
+        } catch (InputMismatchException ime) {
+            System.out.println("Du har ikke indtastet et tal, prøv igen");
+            input.nextLine();
+        }
         input.nextLine();
 
         System.out.println("Angiv genre :");
