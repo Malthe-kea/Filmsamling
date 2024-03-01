@@ -33,6 +33,7 @@ public class UserInterface {
     }
     public void addMovie() {
         boolean done = false;
+        boolean done1 = false;
         int yearCreated = 0;
         int lengthInMinutes = 0;
 
@@ -61,11 +62,11 @@ public class UserInterface {
             isInColor = true;
 
         }
-        while (done)
+        while (!done1)
         try {
             System.out.println("Angiv filmens længde i minutter :");
             lengthInMinutes = input.nextInt();
-            done = false;
+            done1 = true;
         } catch (InputMismatchException ime) {
             System.out.println("Du har ikke indtastet et tal, prøv igen");
             input.nextLine();
